@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #f5f5f5;
+  --color-accent: #d4a5a5;
+  --color-text: #333333;
+  --color-link: #646cff;
+  --color-link-hover: #535bf2;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+
+  font-family: var(--font-body);
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply m-0 min-w-[320px] min-h-screen bg-[var(--color-primary)] text-[var(--color-text)] font-[var(--font-body)];
+}
+
+/* 🔹 Shaped section for ServicesPreview */
+.clip-shape {
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
+/* Optional: smoother curve (experimental) */
+/*
+.clip-shape {
+  clip-path: path("M0,0 L100,0 L100,85 Q50,100 0,85 Z");
+}
+*/
+
+a {
+  font-weight: 500;
+  color: var(--color-link);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--color-link-hover);
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  @apply rounded-lg border border-transparent px-4 py-2 text-base font-medium cursor-pointer transition-colors;
+  background-color: #1a1a1a;
+}
+button:hover {
+  border-color: var(--color-link);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* 🔹 Responsive typography */
+h2, h3 {
+  font-family: var(--font-heading);
+}
+p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
